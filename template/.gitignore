@@ -1,0 +1,3 @@
+# 超過 200 行的實驗原檔放這裡,不進 git;紀錄檔只保留節錄
+records/**/artifacts-full/
+.DS_Store
