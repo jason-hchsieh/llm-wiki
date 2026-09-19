@@ -1,0 +1,14 @@
+{
+  "name": "llm-wiki",
+  "description": "llm-wiki:預測鎖定後才揭曉的學習流程與 Karpathy 式知識庫。",
+  "owner": {
+    "name": "jason-hchsieh"
+  },
+  "plugins": [
+    {
+      "name": "llm-wiki",
+      "source": "./",
+      "description": "預測鎖定後才揭曉的學習流程 /study,加上 Karpathy LLM Wiki 模式的紀錄與知識庫 /wiki。"
+    }
+  ]
+}

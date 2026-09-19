@@ -9,7 +9,16 @@
 
 ## 安裝
 
-兩條路,選一條。
+三條路,選一條。
+
+**M. 從 marketplace 裝(不用手動 clone)**
+
+```bash
+claude plugin marketplace add jason-hchsieh/llm-wiki
+claude plugin install llm-wiki@llm-wiki
+```
+
+第一行把這個 repo 登記成 marketplace(放 plugin 清單的地方),第二行從裡面裝 `llm-wiki`。名字和 A 路一樣,帶 `llm-wiki:` 前綴。repo 需要是你連得到的(私有 repo 要有 GitHub 存取權)。
 
 **A. 當 plugin 用(skill 名字會帶前綴)**
 
