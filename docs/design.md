@@ -137,6 +137,8 @@ template 不獨立成 repo:內容不到百行,且格式跟 skill 綁死,分開�
 
 - 沒有 hook,閘門和最後存檔都靠 Claude 自律。Bastani(SSRN 2024 / PNAS 2025)的失敗案例就是這種。用 `skipped_prediction` 統計次數,超過一定比例再考慮加 hook。
 - 實驗 subagent 的「不動原始碼」「只寫實驗目錄」同樣是軟約束,見上節。
+- `/wiki` 沒設 `disable-model-invocation`,因為 `/study` 內部要呼叫它。代價是 Claude 在任何 repo 都可能依 description 自動觸發 `/wiki`。目前判斷風險低,若誤觸發再改成 `/study` 內嵌 wiki 步驟。
+- 小模型會漏步驟:haiku 跑 `/study` 時跳過了 `topics.yaml` 回寫,拆成獨立步驟後 opus 正常。`/study` 建議用 opus 以上。
 - 讀書題的「正解」來自 Claude,可能錯。紀錄檔要留段落原文與出處,方便回頭查。
 - 「一週一次」「最多三次反問」都是拍腦袋的數字,沒有研究支持。
 

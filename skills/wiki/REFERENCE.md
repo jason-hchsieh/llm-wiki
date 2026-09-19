@@ -58,6 +58,6 @@ updated: 2026-10-03
 
 ```
 2026-10-03 ingest records/llvm/0007-instcombine-canon.md → wiki/llvm/instcombine-add-fold.md, wiki/llvm/canonicalization.md
-2026-10-03 query "add 常數折疊在哪個 pass" → 2 頁
+2026-10-03 query "add 常數折疊在哪個 pass" → wiki/llvm/instcombine-add-fold.md, wiki/llvm/instcombine-simplify-first.md
 2026-10-05 lint 3 issues
 ```

@@ -30,6 +30,12 @@ ln -s ~/personal/llm-wiki/agents/study-quizzer.md      ~/.claude/agents/
 
 skill 目錄可以是 symlink,官方文件有寫。agent 檔的 symlink 沒寫,試了才知道。
 
+## 測過與沒測過的(2026-09-19)
+
+測過:`--plugin-dir` 載入、`/wiki init`、`/study` 第 0 步(含 `topics.yaml` 回寫)、`/wiki ingest` / `lint` / `query` 用一份假紀錄。
+沒測過:B 路 symlink 安裝、`~/.claude/skills/llm-wiki/` 自動載入、兩個 subagent 在真實題目上跑、`.gitignore` 擋大產物。
+模型:`/study` 用 opus 以上。haiku 跑的時候會漏掉 `topics.yaml` 回寫。
+
 ## 第一次使用
 
 1. 建資料 repo:`/wiki init ~/llm-wiki`。它把 `template/` 複製過去並 `git init`。
