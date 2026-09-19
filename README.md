@@ -38,7 +38,7 @@ skill 目錄可以是 symlink,官方文件有寫。agent 檔的 symlink 沒寫,�
 
 ## 第一次使用
 
-1. 建資料 repo:`/wiki init ~/llm-wiki`。它把 `template/` 複製過去並 `git init`。
+1. 建資料 repo:`/wiki init ~/llm-wiki git@github.com:<你>/llm-wiki-data.git`。它把 `template/` 複製過去、`git init`、接上 remote 並推第一個 commit。已有 remote 的話,其他機器直接 `git clone` 到 `~/llm-wiki`,不要再 init。
 2. 在 shell 設定,例如 `.zshrc`:`export LLM_WIKI_DIR=~/llm-wiki`。多台機器把同一個 repo clone 到相同路徑。
 3. 到你要研究的 repo 裡開 Claude Code,打 `/llm-wiki:study llvm`(A 路裝成 plugin 時的名字;沒有同名衝突時裸名 `/study` 也可用。B 路 symlink 裝的就是 `/study llvm`)。第一次它會問「目前目錄對應哪個主題」,答完寫進 `topics.yaml`,之後在同一個目錄就不問。
 4. 每題結束會自動 ingest。想健檢時打 `/wiki lint`。

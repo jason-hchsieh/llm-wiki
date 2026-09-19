@@ -1,7 +1,7 @@
 ---
 name: wiki
 description: 維護 llm-wiki-data 這個 Karpathy 式知識庫:init 建資料 repo、ingest 把一份學習紀錄編進 wiki、query 撈相關頁、lint 健檢。只在使用者手動輸入 /wiki 或 /study 流程內部需要時執行。
-argument-hint: "init <path> | ingest [record] | query <question> | lint"
+argument-hint: "init <path> [remote-url] | ingest [record] | query <question> | lint"
 ---
 
 # /wiki $ARGUMENTS
@@ -11,11 +11,12 @@ argument-hint: "init <path> | ingest [record] | query <question> | lint"
 
 分工(Karpathy):使用者負責找來源、探索、問問題;你負責摘要、交叉引用、歸檔、記帳。`records/` 是原始層,唯讀。這是慣例,沒有工具在擋,靠你遵守。
 
-## init <path>
+## init <path> [remote-url]
 
 1. `<path>` 已存在且非空 → 停止,告知。
 2. 把 template 整個複製到 `<path>`。template 位置:plugin 安裝時是 `${CLAUDE_PLUGIN_ROOT}/template`;以 symlink 裝成一般 skill 時是 `${CLAUDE_SKILL_DIR}/../../template`。兩個都試,先找到的用。`${CLAUDE_PLUGIN_ROOT}` 只在以 plugin 安裝時會被替換;symlink 成一般 skill 時只有 `${CLAUDE_SKILL_DIR}/../../template` 那條有效。
 3. 在 `<path>` 執行 `git init`,提交一次「init llm-wiki-data」。
+   有給 `remote-url` 就接著 `git remote add origin <remote-url>` 並 `git push -u origin HEAD`;push 失敗只回報,不重試。
 4. 告訴使用者在 shell 設 `export LLM_WIKI_DIR=<path>`,多台機器則 clone 同一個 repo 到相同路徑。
 
 完成條件:`<path>/CLAUDE.md`、`records/`、`wiki/`、`cards/`、`index.md`、`log.md`、`topics.yaml` 都在,且有一個 commit。
